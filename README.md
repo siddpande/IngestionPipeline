@@ -3,6 +3,8 @@
 The project is a simulation of an event ingestion pipeline.
 Its developed using spring-boot.
 
+![Screenshot](https://github.com/siddpande/IngestionPipeline/blob/master/Ingestion%20Pipeline.png)
+
 Steps to Run:
 1) Clone te project to your system
 2) Configure the Kafka Endpoints in application.properties
