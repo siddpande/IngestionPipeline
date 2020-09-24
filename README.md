@@ -10,8 +10,8 @@ Its developed using spring-boot.
 2) Configure the Kafka Endpoints in application.properties
 3) Go to the path ~/ingestion-pipeline/EventListener and run the command: ./mvnw spring-boot:run   
 
-Note: Currently only the EventIngestionService has been partially implemented for the purpose of the Demo.
-All other services are just placeholders.
+**Note:** *Currently only the EventIngestionService has been partially implemented for the purpose of the Demo.
+All other services are just placeholders.*
 
 
 **MicroServices in the System and their purpose**
@@ -67,5 +67,7 @@ This service can also tap into the actual events beng receuved and log them if r
 **External Systems**
 External Systems/ ML systems interact with us via the DataExtractionService service. THey receive data in a sync or async manner depenedng on the usecase.
 
+**Other Points**
+1) As the system scales and data increases we 
 
 
