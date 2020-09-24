@@ -40,25 +40,25 @@ Another option when using object storage will be to have 2 table: 1 as shown abo
 
 This service will also have a smart rate limiter which will help in dropping traffic from fraudulent sources/ ID's.
 
-**AnalyticsService**
+2) **AnalyticsService**
 
 This service receives all raw events from different sources.
 It has event based parsers which parse different event types based on sources and extracts usefull information from huge data.
 It then stores these parsed and structured events in any MariaDB database. We can use MariaDB here.
 The service then publishes these structered events with important metadata to a kafka Topic to whch multiple services are listening.
 
-**DataExtractionService**
+3) **DataExtractionService**
 This service is an interface from our system to external systems/ ML models.
 It will retrieve data based on requests from external systems from our Raw events store or parsed events store. It can also read from the fraud detection and reporting services datastore.
 We will expose API's here to allow customers to receive required data over synch as well as asynch route.
 By design we would want this service to read from the Read Ony / Failover Database of services so that it doest put load on the active write DB of our system.
 Eventuall consistency is acceptable to us for such data.
 
-**FraudDetectionService**
+4) **FraudDetectionService**
 This service reads parsed events from the anaytics and runs fraud detection algorthims on the data. It can also provide a feedback to the consumers in the Event Services to blacklist certain sources or user ID's data to prevent DDos like attacks.
 It persists its Fraud logs and generates structured data which can be stored in a RDBS solution like MariaDB.
 
-**ReportingService/ Logging Service**
+5)**ReportingService/ Logging Service**
 This service listents to the parsed events being generated from the Analytics service.
 It then generates reports / graphs as required by the system. It also persysts reports for archival purpose.
 This service can also tap into the actual events beng receuved and log them if required.
