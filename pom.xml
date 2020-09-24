@@ -16,6 +16,10 @@
   <modules>
  
   <module>EventListener</module>
+  <module>AnalyticsService</module>
+  <module>ReportingService</module>
+  <module>FraudDetectionService</module>
+  <module>DataExtractionService</module>
   
   
 </modules>
